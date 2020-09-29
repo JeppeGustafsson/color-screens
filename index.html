@@ -8,52 +8,58 @@
 </head>
 <body>
     <header class="header">
-        <button class="button">
+        <a href="./info.html" class="button">
             <img src="./images/info_icon.svg" alt="More information">
-        </button>
+        </a>
     </header>
-    <main class="main"> 
-        <section class="section time">
+    <main id="sections" class="main"> 
+        <section id="timeSection" class="section time" key="time">
             <img src="./images/clock_icon.svg" alt="Time icon">
         </section>
-        <section class="section calendar">
+        <section id="dateSection" class="section calendar" key="date">
             <img src="./images/date_icon.svg" alt="Date icon">
         </section>
-        <section class="section notes">
+        <section id="noteSection" class="section notes" key="notes">
             <img src="./images/notes_icon.svg" alt="Notes icon">
         </section>
-        <section class="section weather">
+        <section id="weatherSection" class="section weather" key="weather">
             <img src="./images/weather_icon.svg" alt="Weather icon">
         </section>
-        <section class="section game">
+        <section id="gameSection" class="section game" key="game">
             <img src="./images/dice_icon.svg" alt="Dice icon">
         </section>
     </main>
     <footer class="footer">
         <nav>
-            <ul>
-                <li class="menu-item"> 
+            <ul id="menu-list">
+                <li class="menu-item time" key="time"> 
                     <img src="./images/clock_icon.svg" alt="Time icon">
                     <p>Time</p>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item calendar" key="date">
                     <img src="./images/date_icon.svg" alt="Date icon">
                     <p>Date</p>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item notes" key="notes">
                     <img src="./images/notes_icon.svg" alt="Notes icon">
                     <p>Notes</p>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item weather" key="weather">
                     <img src="./images/weather_icon.svg" alt="Weather icon">
                     <p>Weather</p>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item game" key="game">
                     <img src="./images/dice_icon.svg" alt="Dice icon">
                     <p>Game</p>
                 </li>
             </ul>
         </nav>
     </footer>
+
+<script src="./js/game.js"></script>
+<script src="./js/notes.js"></script>
+<script src="./js/tabs.js"></script>
+<script src="./js/timeAndDate.js"></script>
+<script src="./js/weather.js"></script>
 </body>
 </html>
