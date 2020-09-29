@@ -7,6 +7,7 @@ const weatherSection = document.getElementById('weatherSection');
 const gameSection = document.getElementById('gameSection');
 
 menuItems.forEach(item => item.addEventListener('click', toggleActiveTab));
+sections.forEach(item => item.addEventListener('click', toggleActiveTab));
 
 function toggleActiveTab(event) {
     if ( event.target.className.split(" ")[1] === timeSection.className.split(" ")[1] ) {
