@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 body, html {
     width: 100%;
     height: 100vh;
@@ -157,52 +161,74 @@ h1,h2,h3,p {
 
 .section.info {
     display: grid;
-    grid-template-rows: 300px 250px;
-    gap: 50px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 'wide wide wide wide' 'time date notes weather';
+    padding: 0 10%;
+    grid-auto-rows: 400px;
+    gap: 3rem 0;
     justify-items: center;
     align-content: center;
 }
 
 .wide-text {
-    grid-row-start: 1;
-    grid-row-end: 1;
-    grid-column-start: 1;
-    grid-column-end: 5;
+    grid-area: wide;
+    width: 100% !important;
+    padding: 2rem 0;
 }
 
 .flip-card {
-    grid-row-start: 2;
-    grid-row-end: 2;
-    width: 300px !important;
-    height: 180px;
+    width: 100%;
+    height: 250px;
     box-shadow: 0 0 10px 2px rgba(0,0,0,0.2);
     cursor: pointer;
     position: relative;
     transition: 0.5s ease;
 }
 
+.flip-card.time {
+    grid-area: time;
+}
+
+.flip-card.calendar {
+    grid-area: date;
+}
+
+.flip-card.notes {
+    grid-area: notes;
+}
+
+.flip-card.weather {
+    grid-area: weather;
+}
+
 .flip-card img {
-    width: 100px;
-    height: 100px;
+    object-fit: cover;
+    width: unset;
+    height: unset;
 }
 
 .front-face {
     height: inherit;
-    width: inherit;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 1;
     transition: 0,5s ease;
     pointer-events: none;
     user-select: none;
     position: absolute;
     backface-visibility: hidden;
+    z-index: 2;
+    overflow: hidden;
 }
 
 .back-face {
     height: inherit;
-    width: inherit;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -212,6 +238,17 @@ h1,h2,h3,p {
     position: absolute;
     backface-visibility: hidden;
     transform: rotateY(180deg);
+    z-index: 1;
+}
+
+.back-face p {
+    transition: 0.3s ease;
+    margin: 0 1rem;
+}
+
+.flip .back-face p {
+    position: relative;
+    transform: rotateY(0);
 }
 
 .flip {
@@ -221,7 +258,17 @@ h1,h2,h3,p {
 }
 
 /* MOBILE */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
+    body,html,main {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .section {
+        min-height: 100vh;
+        height: 100%;
+    }
+
     h1 {
         font-size: 30vw;
         margin: 0;
@@ -248,10 +295,22 @@ h1,h2,h3,p {
     .section img {
         display: none;
     }
+    .section.info {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: 'wide' 'time' 'date' 'notes' 'weather';
+        grid-auto-rows: 270px;
+        position: relative;
+        padding: 25% 3%;
+    }
 }
 
 /* TABLET */
-@media screen and (min-width: 501px) and (max-width: 900px) {
+@media screen and (min-width: 501px) and (max-width: 1250px) {
+    .section.info {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 'wide wide' 'time date' 'notes weather';
+        grid-auto-rows: 270px;
+    }
     h1 {
         font-size: 22vw;
     }
@@ -270,10 +329,18 @@ h1,h2,h3,p {
         width: 150px;
         height: 150px;
     }
+    .section.info img {
+        width: unset;
+        height: unset;
+    }
     img {
         width: 30px;
         height: 30px;
     }
+    /* .wide-text {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    } */
 }
 
 /* DESKTOP */
@@ -283,6 +350,9 @@ h1,h2,h3,p {
     }
     h2 {
         font-size: 4.5vw;
+    }
+    .info h2 {
+        font-size: 2.8vw;
     }
     h3 {
         font-size: 1.8vw;
