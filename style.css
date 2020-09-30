@@ -153,6 +153,73 @@ h1,h2,h3,p {
   position: relative;
 }
 
+/* INFO PAGE - FLIP CARDS */
+
+.section.info {
+    display: grid;
+    grid-template-rows: 300px 250px;
+    gap: 50px;
+    justify-items: center;
+    align-content: center;
+}
+
+.wide-text {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+.flip-card {
+    grid-row-start: 2;
+    grid-row-end: 2;
+    width: 300px !important;
+    height: 180px;
+    box-shadow: 0 0 10px 2px rgba(0,0,0,0.2);
+    cursor: pointer;
+    position: relative;
+    transition: 0.5s ease;
+}
+
+.flip-card img {
+    width: 100px;
+    height: 100px;
+}
+
+.front-face {
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: 0,5s ease;
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back-face {
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+.flip {
+    transform: rotatey(180deg);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+
 /* MOBILE */
 @media screen and (max-width: 500px) {
     h1 {
