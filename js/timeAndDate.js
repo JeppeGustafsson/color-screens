@@ -20,6 +20,9 @@ const year = date.getFullYear();
 
 function dateFunc() {
     dateHolder.innerHTML = `${dayName}<br>${monthName} ${dateNum}<br>${year}`;
+    let timer = setTimeout(function() {
+        dateFunc()
+    }, 3600000);
 }
 dateFunc();
 

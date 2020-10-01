@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/* GLOBAL */
+
 * {
     box-sizing: border-box;
 }
@@ -33,9 +35,16 @@ h1,h2,h3,p {
     background: transparent;
 }
 
-.main {
-    overflow: hidden;
+/* HEADER */
+
+.header {
+    top: 10px;
+    left: 10px;
+    position: fixed;
+    z-index: 999;
 }
+
+/* SECTIONS */
 
 .section {
     width: 100%;
@@ -57,12 +66,6 @@ h1,h2,h3,p {
 
 .section.active {
     margin-left: 0 !important;
-    margin-top: 0 !important;
-}
-
-.info article {
-    width: 90%;
-    max-width: 1200px;
 }
 
 .section.calendar,
@@ -101,14 +104,7 @@ h1,h2,h3,p {
     background-color: var(--red);
 }
 
-
-
-.header {
-    top: 10px;
-    left: 10px;
-    position: fixed;
-    z-index: 999;
-}
+/* FOOTER & NAV */
 
 .footer {
     bottom: 0;
@@ -138,6 +134,7 @@ h1,h2,h3,p {
     cursor: pointer;
     transition: 0.5s ease;
 }
+
 .footer nav {
     box-shadow: 0 0 10px 2px rgba(0,0,0,0.2);
 }
@@ -165,7 +162,7 @@ h1,h2,h3,p {
     grid-template-areas: 'wide wide wide wide' 'time date notes weather';
     padding: 0 10%;
     grid-auto-rows: 400px;
-    gap: 3rem 0;
+    gap: 3rem 1rem;
     justify-items: center;
     align-content: center;
 }
@@ -174,6 +171,7 @@ h1,h2,h3,p {
     grid-area: wide;
     width: 100% !important;
     padding: 2rem 0;
+    max-width: 1100px;
 }
 
 .flip-card {
@@ -221,7 +219,7 @@ h1,h2,h3,p {
     position: absolute;
     backface-visibility: hidden;
     z-index: 2;
-    overflow: hidden;
+ 
 }
 
 .back-face {
@@ -241,15 +239,10 @@ h1,h2,h3,p {
     z-index: 1;
 }
 
-.back-face p {
-    transition: 0.3s ease;
-    margin: 0 1rem;
-}
-
 .flip .back-face p {
     position: relative;
     transform: rotateY(0);
-}
+} 
 
 .flip {
     transform: rotatey(180deg);
@@ -285,6 +278,9 @@ h1,h2,h3,p {
     p {
         margin: 0;
     }
+    .flip-card p {
+        margin: 1rem;
+    }
     .text-block {
         max-width: 85%;
     }
@@ -294,6 +290,9 @@ h1,h2,h3,p {
     }
     .section img {
         display: none;
+    }
+    .section.info img {
+        display: block;
     }
     .section.info {
         grid-template-columns: repeat(1, 1fr);
@@ -337,10 +336,6 @@ h1,h2,h3,p {
         width: 30px;
         height: 30px;
     }
-    /* .wide-text {
-        grid-column-start: 1;
-        grid-column-end: 4;
-    } */
 }
 
 /* DESKTOP */
