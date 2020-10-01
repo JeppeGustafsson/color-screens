@@ -27,6 +27,7 @@ h1,h2,h3,p {
     color: #ffffff;
     margin: 0 3rem;
     line-height: 1.2;
+    user-select: none;
 }
 
 .button {
@@ -326,7 +327,6 @@ h1,h2,h3,p {
     pointer-events: none;
     user-select: none;
     position: absolute;
-    backface-visibility: hidden;
     z-index: 2;
     overflow: hidden;
 }
