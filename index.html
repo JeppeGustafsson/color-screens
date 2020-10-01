@@ -23,6 +23,16 @@
         </section>
         <section id="noteSection" class="section notes" key="notes">
             <img src="./images/notes_icon.svg" alt="Notes icon">
+            <section id="noteWrapper" class="note-wrapper">
+                <h2 class="activity">Today's activities:</h2>
+                <aside>
+                    <input oninput="showHideSubmit()" id="noteInput" type="text">
+                    <button onclick="addNote()">Add</button>
+                </aside>
+                <ul id="noteOutput" class="output">
+    
+                </ul>
+            </section>
         </section>
         <section id="weatherSection" class="section weather" key="weather">
             <img src="./images/weather_icon.svg" alt="Weather icon">
