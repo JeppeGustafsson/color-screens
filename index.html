@@ -38,13 +38,22 @@
             <img src="./images/weather_icon.svg" alt="Weather icon">
         </section>
         <section id="gameSection" class="section game" key="game">
-            <img src="./images/dice_icon.svg" alt="Dice icon">
+            <img class="dice-img" src="./images/dice_icon.svg" alt="Dice icon">
             <article class="text-block">
                 <h2>Gosh darn it, u clicked on this tab?</h2>
-                <h3>I haven't had time to build this yet, but you haaad to click it huh?
+                <h3>I haven't had time to build this right yet, but you haaad to click it huh?
                 Typical. Well, weren't the other tabs cool? I thought if I made them cool enough
                 people wouldn't be interested in a silly game. Silly me I guess...</h3>
             </article>
+            <section class="game-window">
+                <div class="game-wrapper">
+                    <div id="playerEl" class="player">
+                        <div id="bulletEl" class="bullet"></div>
+                    </div>
+                    <div id="objectEl" class="object"></div>
+                </div>
+                <button onclick="startGame()" id="game-trigger" class="start-btn">Start game</button>
+            </section>
         </section>
     </main>
     <footer class="footer">

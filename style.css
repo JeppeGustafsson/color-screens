@@ -359,6 +359,140 @@ h1,h2,h3,p {
     transition: 0.5s;
 }
 
+/* GAME */
+
+.start-btn {
+    width: 170px;
+    height: 40px;
+    background: #ffffff;
+    outline: none;
+    border: none;
+    margin: 2rem 3rem;
+    font-size: 0.8rem;
+    letter-spacing: 2.5px;
+    cursor: pointer;
+    /* border-radius: 12px; */
+}
+
+.game-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-wrapper {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    background-image: url(https://image.freepik.com/free-vector/pixel-art-game-background-grass-sky-clouds_210544-60.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.section.game.game-on .text-block,
+.section.game.game-on .dice-img {
+    display: none;
+}
+
+.section.game .game-wrapper {
+    opacity: 0;
+}
+
+.section.game .text-block,
+.section.game .dice-img,
+.section.game.game-on .game-wrapper {
+    display: block;
+    opacity: 1;
+}
+
+.player {
+    height: 70px;
+    width: 40px;
+    background-image: url(https://i.pinimg.com/originals/7f/b7/49/7fb749652004be2fcf7e03d4d5805847.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    transform: rotateY(180deg);
+    top: 300px;
+    left: 100px;
+}
+
+.bullet {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: tomato;
+    top: 30px;
+    left: 20px;
+    border-radius: 50% 50%;
+    opacity: 0;
+}
+
+.object {
+    width: 40px;
+    height: 50px;
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ec313c9f-f707-49ed-9df3-c6c16392d8fa/dbdgxfi-ffcb2be0-a714-4a2c-885c-0d32afa3be20.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZWMzMTNjOWYtZjcwNy00OWVkLTlkZjMtYzZjMTYzOTJkOGZhXC9kYmRneGZpLWZmY2IyYmUwLWE3MTQtNGEyYy04ODVjLTBkMzJhZmEzYmUyMC5naWYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.Cjjal3UohYsf37rQjnebC6ZhhfkjAlekhcMs_l-BcZg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    transform: rotateY(180deg);
+    top: 240px;
+    left: 800px;
+    animation: move 1s infinite linear;
+}
+
+@keyframes move {
+    0% {
+        left: 800px;
+    }
+    100% {
+        left: -50px;
+    }
+}
+
+@keyframes jump {
+    0% {
+        top: 300px;
+    }
+    50% {
+        top: 230px;
+    }
+    80% {
+        top: 230px;
+    }
+    100% {
+        top: 300px;
+    }
+ }
+
+.jump {
+    animation: jump 0.5s ease-in-out;
+}
+
+@keyframes shoot {
+    0% {
+        left: 20px;
+        opacity: 1;
+    }
+    100% {
+        left: -700px;
+    }
+}
+
+.shoot {
+    animation: shoot 0.3s linear;
+}
+
 /* MOBILE */
 @media screen and (max-width: 550px) {
     body,html,main {
@@ -413,6 +547,9 @@ h1,h2,h3,p {
     .output .note {
         font-size: 1.8rem;
         padding: 0.7rem 2.2rem;;
+    }
+    .start-btn {
+        margin: 2rem 0;
     }
 }
 
