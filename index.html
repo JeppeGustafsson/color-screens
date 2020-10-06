@@ -35,7 +35,8 @@
             </section>
         </section>
         <section id="weatherSection" class="section weather" key="weather">
-            <img src="./images/weather_icon.svg" alt="Weather icon">
+            <img id="weatherIconHolder" src="./images/weather_icon.svg" alt="Weather icon">
+            <h2 id="weatherHolder"></h2>
         </section>
         <section id="gameSection" class="section game" key="game">
             <img class="dice-img" src="./images/dice_icon.svg" alt="Dice icon">
@@ -45,15 +46,6 @@
                 Typical. Well, weren't the other tabs cool? I thought if I made them cool enough
                 people wouldn't be interested in a silly game. Silly me I guess...</h3>
             </article>
-            <section class="game-window">
-                <div class="game-wrapper">
-                    <div id="playerEl" class="player">
-                        <div id="bulletEl" class="bullet"></div>
-                    </div>
-                    <div id="objectEl" class="object"></div>
-                </div>
-                <button onclick="startGame()" id="game-trigger" class="start-btn">Start game</button>
-            </section>
         </section>
     </main>
     <footer class="footer">
